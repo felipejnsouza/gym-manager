@@ -3,11 +3,11 @@ const { response } = require('express')
 const routes = express.Router()
 
 routes.get('/', (require, response) => {
-    return response.redirect("teachers")
+    return response.redirect("instructors")
 })
 
-routes.get('/teachers', (require, response) => {
-    return response.render("teachers/index")
+routes.get('/instructors', (require, response) => {
+    return response.render("instructors/index")
 })
 
 module.exports = routes
