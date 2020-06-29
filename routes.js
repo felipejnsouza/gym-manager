@@ -10,4 +10,8 @@ routes.get('/instructors', (require, response) => {
     return response.render("instructors/index")
 })
 
+routes.get('/members', (require, response) => {
+    return response.send("members")
+})
+
 module.exports = routes
