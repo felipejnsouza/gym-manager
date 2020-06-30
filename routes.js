@@ -10,6 +10,17 @@ routes.get('/instructors', (require, response) => {
     return response.render("instructors/index")
 })
 
+routes.get('/instructors/create', (require, response) => {
+    return response.render("instructors/create")
+})
+
+routes.post("/instructors", (require, response) => {
+    //req.query
+    //req.body
+    
+    return response.send(require.body)
+})
+
 routes.get('/members', (require, response) => {
     return response.send("members")
 })
