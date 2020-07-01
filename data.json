@@ -1,0 +1,31 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "https://goo",
+      "name": "Felipe",
+      "birth": 1330732800000,
+      "gender": "M",
+      "services": "Gym",
+      "created_at": 1593561369301
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://goo",
+      "name": "Camarada",
+      "birth": 1188345600000,
+      "gender": "M",
+      "services": "Spinning",
+      "created_at": 1593561376178
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://sdf",
+      "name": "sdf",
+      "birth": 1577836800000,
+      "gender": "M",
+      "services": "sdf",
+      "created_at": 1593561392001
+    }
+  ]
+}
