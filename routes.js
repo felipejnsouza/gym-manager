@@ -1,7 +1,7 @@
 const express = require('express')
 const { response } = require('express')
 const routes = express.Router()
-const instructors = require('./public/instructors')
+const instructors = require('./instructors')
 
 routes.get('/', (require, response) => {
     return response.redirect("instructors")
@@ -16,6 +16,9 @@ routes.get('/instructors/create', (require, response) => {
 })
 
 routes.get('/instructors/:id',instructors.show)
+
+routes.get('/instructors/:id/edit', instructors.edit)
+
 
 routes.post("/instructors", instructors.post)
 
