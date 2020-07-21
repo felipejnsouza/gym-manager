@@ -57,7 +57,7 @@ exports.post = function(require, response){
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if(err) return response.send("Write file error!")
 
-        return response.redirect('/instructors')
+        return response.redirect(`/instructors/${id}`)
     })
 
     // return response.send(require.body)
@@ -82,4 +82,52 @@ exports.edit = function(require, response) {
     }
 
     return response.render('instructors/edit', {instructor})
+}
+
+// Put "atualizar"
+
+exports.put = function(require, response) {
+    const {id} = require.body
+    let index = 0
+
+    const foundInstructor = data.instructors.find((instructor, foundIndex)=>{
+        if(instructor.id == id){
+            index = foundIndex
+            return true
+        }
+    })
+
+    if(!foundInstructor) return response.send("Instructor not found!")
+
+    const instructor = {
+        ...foundInstructor,
+        ...require.body,
+        birth: Date.parse(require.body.birth)
+    }
+
+    data.instructors[index] = instructor
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if(err) return response.send("Write error!")
+
+        return response.redirect(`/instructors/${id}`)
+    })
+
+}
+
+// Delete
+exports.delete = function(require, response) {
+    const {id} = require.body
+
+    const filteredInstructors = data.instructors.filter(function(instructor){
+        return instructor.id != id
+    })
+
+    data.instructors = filteredInstructors
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if(err) return response.send("write error")
+
+        return response.redirect("/instructors")
+    })
 }
