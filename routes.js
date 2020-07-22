@@ -7,9 +7,7 @@ routes.get('/', (require, response) => {
     return response.redirect("instructors")
 })
 
-routes.get('/instructors', (require, response) => {
-    return response.render("instructors/index")
-})
+routes.get('/instructors', instructors.index)
 
 routes.get('/instructors/create', (require, response) => {
     return response.render("instructors/create")

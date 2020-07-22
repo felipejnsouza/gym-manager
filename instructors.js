@@ -3,6 +3,11 @@ const data = require('./data.json')
 const { response } = require('express')
 const { age, date} = require('./utils')
 
+
+exports.index = function(require, response){
+    return response.render("instructors/index", {instructors: data.instructors})
+}
+
 // Show "get"
 exports.show = function(require, response){
     const {id} = require.params
@@ -102,7 +107,7 @@ exports.put = function(require, response) {
     const instructor = {
         ...foundInstructor,
         ...require.body,
-        birth: Date.parse(require.body.birth)
+        birth: Date.parse(require.body.birth),
     }
 
     data.instructors[index] = instructor
