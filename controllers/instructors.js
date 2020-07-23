@@ -1,14 +1,13 @@
 const fs = require('fs')
-const data = require('./data.json')
+const data = require('../data.json')
 const { response } = require('express')
-const { age, date} = require('./utils')
+const { age, date} = require('../utils')
 
 
 exports.index = function(require, response){
     return response.render("instructors/index", {instructors: data.instructors})
 }
 
-// Show "get"
 exports.show = function(require, response){
     const {id} = require.params
 
@@ -30,7 +29,6 @@ exports.show = function(require, response){
 
 }
 
-// Create "post"
 exports.post = function(require, response){
     //req.query
     //req.body
@@ -68,8 +66,6 @@ exports.post = function(require, response){
     // return response.send(require.body)
 }
 
-// Edit "get"
-
 exports.edit = function(require, response) {
     const {id} = require.params
 
@@ -79,7 +75,7 @@ exports.edit = function(require, response) {
 
     if(!foundInstructor) return response.send("Instructor not found!")
 
-    const birth = date(foundInstructor.birth)
+    const birth = date(foundInstructor.birth).iso
 
     const instructor = {
         ...foundInstructor,
@@ -88,8 +84,6 @@ exports.edit = function(require, response) {
 
     return response.render('instructors/edit', {instructor})
 }
-
-// Put "atualizar"
 
 exports.put = function(require, response) {
     const {id} = require.body
@@ -120,7 +114,6 @@ exports.put = function(require, response) {
 
 }
 
-// Delete
 exports.delete = function(require, response) {
     const {id} = require.body
 
@@ -136,3 +129,5 @@ exports.delete = function(require, response) {
         return response.redirect("/instructors")
     })
 }
+
+exports.create =  (require, response) => { response.render("instructors/create")}

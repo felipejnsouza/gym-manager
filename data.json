@@ -1,4 +1,28 @@
 {
+  "members": [
+    {
+      "avatar_url": "https://nova-escola-producao.s3.amazonaws.com/tunxSkGu84NNEkscfMQUVeRzZD62xuejkA7ZhCD79kyDMjHzpWW2b7MgT62N/menina-faz-exercicio-no-caderno-na-escola.jpg",
+      "name": "Maria",
+      "email": "maria@gmail.com",
+      "birth": 648259200000,
+      "gender": "F",
+      "blood": "O+",
+      "weight": "55",
+      "height": "160",
+      "id": 1
+    },
+    {
+      "avatar_url": "https://colegioguarulhos.com.br/v2/includes/cg/img/aluno2.png",
+      "name": "Manoel",
+      "email": "manolo@gmail.com",
+      "birth": 648604800000,
+      "gender": "M",
+      "blood": "AB-",
+      "weight": "80",
+      "height": "190",
+      "id": "3"
+    }
+  ],
   "instructors": [
     {
       "id": "4",
@@ -8,15 +32,6 @@
       "gender": "M",
       "services": "Ginástica, Musculação, Natação",
       "created_at": 1593639236803
-    },
-    {
-      "id": "9",
-      "avatar_url": "https://i.pinimg.com/originals/b0/88/e5/b088e5db6b560a33fc20e666a46263b3.jpg",
-      "name": "Liza Simpsons",
-      "birth": 648259200000,
-      "gender": "F",
-      "services": "Dança, Ginástica",
-      "created_at": 1594934975476
     }
   ]
 }
