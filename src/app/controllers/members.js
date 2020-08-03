@@ -9,7 +9,11 @@ module.exports = {
         
     },
     create(require, response){
-        return response.render("members/create")
+        Member.instructorsSelectOption(function(options){
+
+            return response.render("members/create", {instructorOptions: options})
+        })
+
     },
     post(require, response){
         const keys = Object.keys(require.body)
@@ -38,7 +42,10 @@ module.exports = {
 
             member.birth = date(member.birth).iso
 
-            return response.render('members/edit', {member})
+            Member.instructorsSelectOption(function(options){
+
+                return response.render('members/edit', {member, instructorOptions: options})
+            })
         })
     },
     put(require, response){
