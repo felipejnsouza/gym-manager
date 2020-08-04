@@ -3,18 +3,18 @@
     
     {% block content %}
      <div class="card table-container" >
-         <div class="header">
-            <a class="button" href="/instructors/create">NOVO</a>
-            <form action="/instructors" method="GET">
-                <input 
-                    type="text" 
-                    name="filter"
-                    placeholder="Nome ou Atendimento"
-                    value="{{filter}}"
-                >
-                <button type="submit">Filtrar</button>
-            </form>
-         </div>
+            <div class="header">
+                <a class="button" href="/instructors/create">NOVO</a>
+                <form action="/instructors" method="GET">
+                    <input 
+                        type="text" 
+                        name="filter"
+                        placeholder="Nome ou Atendimento"
+                        value="{{filter}}"
+                    >
+                    <button type="submit">Filtrar</button>
+                </form>
+            </div>
 
         <table width="100%">
             <thead>
@@ -38,6 +38,13 @@
                 {% endfor %}
             </tbody>
         </table>
+
+        <div class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+            data-filter={{filter}}>
+        </div>
+
      </div>
        
     {% endblock content %}
